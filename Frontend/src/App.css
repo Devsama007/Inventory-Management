@@ -1,0 +1,128 @@
+/* src/App.css */
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.product-creator input, .product-selector input {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-creator button {
+  background-color: #007bff;
+  width: 100%;
+}
+
+/* Product Manager */
+.product-manager-container {
+  display: flex;
+  gap: 20px;
+}
+
+.product-card {
+  flex: 1;
+}
+
+.product-summary p {
+  margin: 5px 0;
+}
+
+.current-stock {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.stock-count {
+  color: #28a745;
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.btn-increase {
+  background-color: #28a745;
+}
+
+.btn-decrease {
+  background-color: #dc3545;
+}
+
+.stock-actions input {
+  width: 100px;
+  text-align: center;
+}
+
+/* History */
+.transaction-card {
+  flex: 1;
+}
+
+.transaction-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-history th, .transaction-history td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.increase {
+  background-color: #d4edda;
+}
+.decrease {
+  background-color: #f8d7da;
+}
+.initial {
+  background-color: #d1ecf1;
+}
+
+.message-bar {
+  padding: 10px;
+  background-color: #ffc107;
+  color: #333;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
