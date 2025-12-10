@@ -35,11 +35,11 @@ cd inventory
 
 # 2. Backend Setup  
 
-**Step 1: Install Dependencies**  
+### Step 1: Install Dependencies
 cd Backend  
 npm install  
 
-**Step 2: Create Environment File**  
+### Step 2: Create Environment File
 Create a .env file in the Backend directory:  
 
 # Backend/.env  
@@ -49,7 +49,7 @@ MONGODB_URI=mongodb://localhost:27017/inventory-management
 
 **Important: Change MongoDB URI with actual link.**
 
-**Step 3: Start MongoDB**  
+### Step 3: Start MongoDB 
 
 Windows:  
 Open Command Prompt as Administrator  
@@ -63,7 +63,7 @@ mongosh
 Should connect successfully  
 Type 'exit' to quit  
 
-**Step 4: Start Backend Server**  
+### Step 4: Start Backend Server
 In Backend directory  
 Navigate to the Backend Directory:
 cd Backend
@@ -75,14 +75,14 @@ MongoDB connected
 
 # 3. Frontend Setup  
 
-**Step 1: Open New Terminal**  
+### Step 1: Open New Terminal  
 Keep the backend server running and open a new terminal window.  
 
-**Step 2: Install Dependencies**  
+### Step 2: Install Dependencies  
 cd Frontend  
 npm install  
 
-**Step 3: Start Frontend Development Server**  
+### Step 3: Start Frontend Development Server  
 npm run dev  
 
 You should see:  
@@ -99,9 +99,9 @@ Click the terminal link
 The API endpoints are served from the base URL: **`http://localhost:5000/api/products`**.
 
 # 1. Create Product
-**Method:** POST
-**Endpoint:** /api/products
-**Requirements:** sku must be unique
+•	**Method:** POST  
+•	**Endpoint:** /api/products 
+•	**Requirements:** sku must be unique 
 
 ```json raw body
 {
@@ -112,9 +112,9 @@ The API endpoints are served from the base URL: **`http://localhost:5000/api/pro
 ```
 
 # 2. Increase Stock
-**Method:** POST
-**Endpoint:** /api/products/:id/increase
-**Requirements:** quantity must be > 0.
+•	**Method:** POST 
+•	**Endpoint:** /api/products/:id/increase  
+•	**Requirements:** quantity must be > 0.   
 
 ```header
 Content-Type: application/json
@@ -127,9 +127,9 @@ Content-Type: application/json
 ```
 
 # 3. Decrease Stock
-**Method:** POST
-**Endpoint:** /api/products/:id/decrease
-**Requirements:** quantity must be > 0.
+•	**Method:** POST 
+•	**Endpoint:** /api/products/:id/decrease 
+•	**Requirements:** quantity must be > 0.   
 
 ```header
 Content-Type: application/json
@@ -142,12 +142,11 @@ Content-Type: application/json
 ```
 
 # 4. View Product Summary
-**Method:** GET
-**Endpoint:** /api/products/:id
-**Returns:** Product details, current stock, total units increased (including initial), and total units decreased.
+•	**Method:** GET 
+•	**Endpoint:** /api/products/:id  
+•	**Returns:** Product details, current stock, total units increased (including initial), and total units decreased.   
 
 # 5. View Transaction History
-**Method:** GET
-**Endpoint:** /api/products/:id/transactions
-**Returns:** A list of all stock movements (types: INITIAL, INCREASE, DECREASE), sorted by timestamp.
-
+•	**Method:** GET  
+•	**Endpoint:** /api/products/:id/transactions  
+•	**Returns:** A list of all stock movements (types: INITIAL, INCREASE, DECREASE), sorted by timestamp.
