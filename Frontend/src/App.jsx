@@ -151,7 +151,7 @@ const App = () => {
   return (
     <div className="app-container">
       <header>
-        <h1>Stock Management Service</h1>
+        <h1>Inventory Management</h1>
       </header>
 
       {message && <div className="message-bar">{message}</div>}
@@ -181,7 +181,7 @@ const App = () => {
             value={newProductData.initialStock}
             onChange={(e) => setNewProductData({...newProductData, initialStock: parseInt(e.target.value) || 0})}
           />
-          <button type="submit">Create Product (POST /products)</button>
+          <button type="submit">Create Product</button>
         </form>
       </div>
 
