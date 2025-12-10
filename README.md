@@ -99,9 +99,9 @@ Click the terminal link
 The API endpoints are served from the base URL: **`http://localhost:5000/api/products`**.
 
 # 1. Create Product
-•	**Method:** POST  
-•	**Endpoint:** /api/products 
-•	**Requirements:** sku must be unique 
+•	 **Method:** POST  
+•	 **Endpoint:** /api/products 
+•	 **Requirements:** sku must be unique 
 
 ```json raw body
 {
@@ -112,10 +112,11 @@ The API endpoints are served from the base URL: **`http://localhost:5000/api/pro
 ```
 
 # 2. Increase Stock
-•	**Method:** POST 
-•	**Endpoint:** /api/products/:id/increase  
-•	**Requirements:** quantity must be > 0.   
+•	 **Method:** POST 
+•	 **Endpoint:** /api/products/:id/increase  
+•	 **Requirements:** quantity must be > 0.   
 
+In Headers
 ```header
 Content-Type: application/json
 ```
@@ -127,10 +128,11 @@ Content-Type: application/json
 ```
 
 # 3. Decrease Stock
-•	**Method:** POST 
-•	**Endpoint:** /api/products/:id/decrease 
-•	**Requirements:** quantity must be > 0.   
+•	 **Method:** POST 
+•	 **Endpoint:** /api/products/:id/decrease 
+•	 **Requirements:** quantity must be > 0.   
 
+In Headers
 ```header
 Content-Type: application/json
 ```
@@ -142,11 +144,11 @@ Content-Type: application/json
 ```
 
 # 4. View Product Summary
-•	**Method:** GET 
-•	**Endpoint:** /api/products/:id  
-•	**Returns:** Product details, current stock, total units increased (including initial), and total units decreased.   
+• 	**Method:** GET 
+•	 **Endpoint:** /api/products/:id  
+•	 **Returns:** Product details, current stock, total units increased (including initial), and total units decreased.   
 
 # 5. View Transaction History
-•	**Method:** GET  
-•	**Endpoint:** /api/products/:id/transactions  
-•	**Returns:** A list of all stock movements (types: INITIAL, INCREASE, DECREASE), sorted by timestamp.
+•	 **Method:** GET  
+•	 **Endpoint:** /api/products/:id/transactions  
+•	 **Returns:** A list of all stock movements (types: INITIAL, INCREASE, DECREASE), sorted by timestamp.
