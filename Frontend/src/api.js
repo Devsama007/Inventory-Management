@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+//Check environment variable
+const isProduction = import.meta.env.PROD;
+
+const baseURL = isProduction 
+      ? import.meta.env.VITE_API_BASE_URL
+      : 'http://localhost:5000/api';
+
+
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Matches the backend URL/port
+  baseURL: baseURL, // Matches the backend URL/port
 });
 
 export const createProduct = (data) => API.post('/products', data);
