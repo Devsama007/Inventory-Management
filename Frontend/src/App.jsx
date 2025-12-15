@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as api from './api';
-import './App.css'; // You'll need to create a simple CSS file
+import './App.css'; 
 
 const App = () => {
   const [productId, setProductId] = useState('');
@@ -10,6 +10,9 @@ const App = () => {
   const [stockChange, setStockChange] = useState(1);
   const [message, setMessage] = useState('');
   const [viewHistory, setViewHistory] = useState(false);
+  
+  // 1. NEW STATE: Track the loading status for the create operation
+  const [isLoading, setIsLoading] = useState(false); 
 
   // --- Utility Functions ---
 
@@ -44,6 +47,9 @@ const App = () => {
 
   const handleCreateProduct = async (e) => {
     e.preventDefault();
+    
+    setIsLoading(true); // <-- 2. START LOADING
+
     try {
       const response = await api.createProduct(newProductData);
       const newId = response.data._id;
@@ -55,12 +61,16 @@ const App = () => {
       fetchProductSummary(newId); 
     } catch (error) {
       showMessage(`Creation Failed: ${error.response?.data?.message || 'Check console.'}`);
+    } finally {
+      setIsLoading(false); // <-- 3. STOP LOADING, regardless of success or failure
     }
   };
 
   const handleStockAction = async (actionType) => {
     if (!productId) return showMessage('Please create or select a product first.');
     if (stockChange <= 0) return showMessage('Quantity must be > 0');
+    
+    // Optional: You could add a separate loading state here for stock actions if needed
 
     try {
       let response;
@@ -181,19 +191,23 @@ const App = () => {
             value={newProductData.initialStock}
             onChange={(e) => setNewProductData({...newProductData, initialStock: parseInt(e.target.value) || 0})}
           />
-          <button type="submit">Create Product</button>
+          
+          {/* 4. Display Loading Message */}
+          {isLoading && (
+            <div className="loading-message">
+              Please wait, creating product... (Server may be waking up)
+            </div>
+          )}
+
+          {/* 5. Disable Button While Loading */}
+          <button 
+            type="submit"
+            disabled={isLoading} // <-- Disable button here
+          >
+            {isLoading ? 'Processing...' : 'Create Product'}
+          </button>
         </form>
       </div>
-
-      {/* <div className="card product-selector">
-        <h2>Manage Existing Product</h2>
-        <input 
-          type="text" 
-          placeholder="Enter Product ID to View/Manage" 
-          value={productId}
-          onChange={(e) => setProductId(e.target.value)}
-        />
-      </div> */}
 
       {product && (
         <div className="product-manager-container">

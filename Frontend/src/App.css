@@ -131,3 +131,18 @@ button {
   text-align: center;
   font-weight: bold;
 }
+
+.loading-message {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffeb3b; /* A noticeable yellow color */
+  color: #333;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-creator button:disabled {
+  background-color: #cccccc !important; /* Override primary color */
+  cursor: not-allowed;
+}
