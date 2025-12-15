@@ -206,7 +206,7 @@ const App = () => {
                 if (!viewHistory) fetchTransactionHistory(productId);
               }}
             >
-              {viewHistory ? 'Hide' : 'Show'} Transaction History (GET /products/:id/transactions)
+              {viewHistory ? 'Hide' : 'Show'} Transaction History
             </button>
           </div>
           

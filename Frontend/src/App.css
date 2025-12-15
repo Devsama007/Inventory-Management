@@ -7,7 +7,7 @@ body {
 }
 
 .app-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -107,14 +107,19 @@ button {
   text-align: left;
 }
 
+.btn-history-toggle {
+  background-color: #007bff;
+  margin-top: 10px;
+}
+
 .increase {
-  background-color: #d4edda;
+  background-color: #8ff5a7;
 }
 .decrease {
-  background-color: #f8d7da;
+  background-color: #f7979f;
 }
 .initial {
-  background-color: #d1ecf1;
+  background-color: #93e6f5;
 }
 
 .message-bar {
